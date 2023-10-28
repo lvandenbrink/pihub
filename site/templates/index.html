@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<!--link rel="stylesheet" href="{{ url_for('static', filename='all.css') }}"-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+
+	<style>
+	html {
+		font-family: Arial;
+		display: inline-block;
+		margin: 0px auto;
+		text-align: center;
+	}
+	h2 { font-size: 3.0rem; }
+	p, table td { font-size: 2.5rem; }
+	.units { font-size: 1.2rem; }
+	.labels{
+		font-size: 1.5rem;
+		vertical-align:middle;
+		padding-bottom: 15px;
+	}
+	table td:not(:first-child) { text-align: left; }
+	.center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	</style>
+</head>
+<body>
+	<h2>PiHub</h2>
+	<table class="center">
+		<tr >
+			<td><i id="sofa-icon" class="fas fa-lightbulb"></i></td>
+			<td>Sofa Light</td>
+			<td style="text-align: center;" width="120px" >
+				<label class="switch" style="margin: 5px 0px">
+					<input id="sofa-switch" type="checkbox"/>
+					<span class="slider round"/>
+				</label>
+			</td>
+		</tr>
+	</table>
+	<h2>PiHub Climate</h2>
+	<table class="center">
+		<tr>
+			<td><i class="fas fa-thermometer-half" style="color:#059e8a;"></i></td>
+			<td><span class="labels">Temperature </span></td>
+			<td><span id="temperature">{{ temperature }}</span><sup class="units">&deg;C</sup></td>
+		</tr>
+		<tr>
+			<td><i class="fas fa-tint" style="color:#00add6;"></i></td>
+			<td><span class="labels">Humidity </span></td>
+			<td><span id="humidity">{{ humidity }}</span><sup class="units">%</sup></td>
+		</tr>
+		<tr>
+			<td><i class="fas fa-temperature-low" style="color:#7da2a8;"></i></td>
+			<td><span class="labels">Dew Point </span></td>
+			<td><span id="dewpoint">{{ dewpoint }}</span></td>
+		</tr>
+		<tr>
+			<td colspan="3"><i><span class="labels">{{ message }}</span></i></td>
+		</tr>
+	</body>
+</html>

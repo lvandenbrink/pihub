@@ -1,0 +1,14 @@
+[Unit]
+Description=Site
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/lauy/site/index.py
+StandardOutput=syslog
+StandardError=syslog
+User=site
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
